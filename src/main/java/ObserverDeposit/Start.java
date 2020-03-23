@@ -42,8 +42,22 @@ public class Start {
             dl.openNews();
         });
 
+        dl.addEventList(Event.Salary,()->{
+            System.out.println(boss.getName()+"发工资了");
+            dl.closeNews();
+        });
+
+        jd.addEventList(Event.Salary,()->{
+            System.out.println(boss.getName()+"发工资了");
+            jd.closeNBA();
+        });
+
+
+
         boss.trigger(Event.Back);
 
         boss.trigger(Event.Out);
+
+        boss.trigger(Event.Salary);
     }
 }
