@@ -12,38 +12,38 @@ public class Start {
 
         NewsObserver dl = new NewsObserver("丁磊");
 
-        jd.addEventList(Deposit.Event.Back,()->{
+        jd.addEventList(Event.Back,()->{
             System.out.println(boss.getName()+"来了");
             jd.closeNBA();
         });
 
-        ym.addEventList(Deposit.Event.Back,()->{
+        ym.addEventList(Event.Back,()->{
             System.out.println(boss.getName()+"来了");
             ym.closeNBA();
         });
 
-        dl.addEventList(Deposit.Event.Back,()->{
+        dl.addEventList(Event.Back,()->{
             System.out.println(boss.getName()+"来了");
             dl.closeNews();
         });
 
-        jd.addEventList(Deposit.Event.Out,()->{
+        jd.addEventList(Event.Out,()->{
             System.out.println(boss.getName()+"走了");
             jd.openNBA();
         });
 
-        ym.addEventList(Deposit.Event.Out,()->{
+        ym.addEventList(Event.Out,()->{
             System.out.println(boss.getName()+"走了");
             ym.openNBA();
         });
 
-        dl.addEventList(Deposit.Event.Out,()->{
+        dl.addEventList(Event.Out,()->{
             System.out.println(boss.getName()+"走了");
             dl.openNews();
         });
 
-        boss.trigger(Deposit.Event.Back);
+        boss.trigger(Event.Back);
 
-        boss.trigger(Deposit.Event.Out);
+        boss.trigger(Event.Out);
     }
 }

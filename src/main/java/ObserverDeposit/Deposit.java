@@ -9,37 +9,28 @@ import java.util.Map;
  * @author zhouchuang
  * @create 2020-03-23 21:54
  */
-public class Deposit {
-    private static class DepositHandler{
+public class Deposit implements IEventList,ITrigger{
+    private static class DepositHandler {
         private static final Deposit deposit = new Deposit();
     }
     public static Deposit instance(){
         return DepositHandler.deposit;
     }
 
-    enum Event{
-        Back(1),Out(2);
-        private int value;
-
-        Event(int value) {
-            this.value = value;
-        }
-    }
-
     private Map<Integer,List<NotifyCallback>> maps = new HashMap<Integer,List<NotifyCallback>>();
 
-
-
+    @Override
     public void addEventList(Event event,NotifyCallback callback){
-        List<NotifyCallback> list = maps.get(event.value);
+        List<NotifyCallback> list = maps.get(event.getValue());
         if(list==null){
             list = new ArrayList<>();
-            maps.put(event.value,list);
+            maps.put(event.getValue(),list);
         }
         list.add(callback);
     }
 
+    @Override
     public void trigger(Event event) {
-        maps.get(event.value).forEach(callback -> callback.process());
+        maps.get(event.getValue()).forEach(callback -> callback.process());
     }
 }
