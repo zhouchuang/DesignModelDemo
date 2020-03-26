@@ -12,5 +12,7 @@ public class Start {
         boss.add(nbaObserver);
         boss.add(newsObserver);
         boss.notice();
+        boss.remove(nbaObserver);
+        boss.notice();
     }
 }
