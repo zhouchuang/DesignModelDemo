@@ -2,5 +2,5 @@ package Bridge;
 
 public interface IBrand {
     void install(ISoft iSoft);
-    void run();
+    void run(ISoft iSoft);
 }
