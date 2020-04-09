@@ -13,5 +13,8 @@ public class Start {
         huawei.run(wechat);
         iphone.run(alipay);
         iphone.run(wechat);
+
+        int [][] f = new int[6][6];
+        int f2 [][]   = new int[6][];
     }
 }
