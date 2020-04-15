@@ -5,7 +5,7 @@ import java.util.List;
 
 public abstract class AbstractArea implements Component {
     private String name;
-    private List<Component> list = new ArrayList<>();
+    private List<Component> list = new ArrayList();
     private int deep;
 
     public AbstractArea setDeep(int deep) {
